@@ -1,4 +1,13 @@
 header {
-    display: flex;
     height: 100px;
+}
+
+
+nav {
+    background-color: rgb(230, 190, 81);
+}
+
+footer {
+    background-color: rgb(74, 41, 105);
+    height: 150px;
 }
