@@ -40,3 +40,18 @@ footer{
 background-color: rgb(226, 228, 230);
 }
 /*--------Fin Index--------*/
+
+/*--------Login y registro--------*/
+
+.formV {
+    border: solid rgb(11, 5, 29) 1px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(234, 234, 234);
+}
+.bodyLoginReg{
+    background-image: url('../images/fondoLoginReg.jpg');
+    background-size: cover;
+}
+/*--------Fin Login y registro--------*/

@@ -15,7 +15,7 @@
 <body>
     <header class="d-flex justify-content-center align-items-center">
         <img class="img-fluid" src="./view/images/logoPequeno.png" alt="logo">
-        <h2 class="fw-bold fs-2">Carta</h2>
+        <h2 class="fw-bold fs-2">Casa Victor</h2>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light fs-3">
@@ -29,7 +29,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     <a class="nav-link" href="./view/plantillas/plantillaCarta.php">Carta</a>
                     <a class="nav-link" href="#">Platos</a>
-                    <a class="nav-link" href="#">Reserva</a>
+                    <a class="nav-link" href="./view/plantillas/plantillaLogin.php">Reserva</a>
                     <a class="nav-link" href="#">Conócenos</a>
                 </div>
             </div>
