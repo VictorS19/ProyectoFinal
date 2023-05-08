@@ -1,12 +1,4 @@
 <?php
-
-namespace app\iberia\controlador;
-
-use app\iberia\repositorio\RegistroUsuarioRepositorio;
-
-
-class RegistroController
-{
  
   public function registrar()
   {
@@ -15,10 +7,6 @@ class RegistroController
       unset($_SESSION['datosSesion']);
     }
 
-    if (isset($_POST['irLogin'])) {
-      header('Location: index.php?ctl=login');
-      
-    }
 
     if (isset($_POST['registroOk'])) {
       $errorInput = false;
@@ -39,20 +27,20 @@ class RegistroController
       if($pass != $pass2){ $errorInput = true ;}
 
       if($errorInput){
-        $_SESSION['error'] = 1;
+        $_SESSION['errorReg'] = "Rellene correctamente todos los campos para continuar";
       }else{
-        unset($_SESSION['error']);
-        require_once __DIR__ . '/../Repositorio/RegistroUsuarioRepositorio.inc';
+
+        if(isset($_SESSION['errorReg'])){unset($_SESSION['errorReg']);}
+      
+        require_once '/../ConsultasBD/RegistroUsuarioBd.php';
         //comparar pass haseada para el login: password_verify($pass, $passHashed);
-        $registro =  (new RegistroUsuarioRepositorio())->registrar($correo, password_hash($pass,PASSWORD_DEFAULT),$nombre,$apellidos,$dni,$fechaNac);
+        $registro = registrarBd($correo, password_hash($pass,PASSWORD_DEFAULT),$nombre,$apellidos,$dni,$fechaNac);
         $_SESSION['datosSesion'] = [$correo,$pass,$nombre];
-        header('Location: index.php?ctl=inicio');
+        header('Location: ../../index.php');//TODO verificar ruta
 
       }
 
     }
-    require __DIR__ . '/../../app/plantillas/codigoRegistro.php';
   }
 
  
-}

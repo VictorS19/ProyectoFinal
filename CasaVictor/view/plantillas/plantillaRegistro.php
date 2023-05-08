@@ -1,3 +1,6 @@
+<?php  require "../../controller/Controlador/RegistroController.php";
+registrar();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -33,8 +36,8 @@
             
 
         </form>
-        <?php if(isset($_SESSION['errorLog'])){
-                echo "<span class='alert alert-danger'>Error al registrar el usuario</span>";
+        <?php if(isset($_SESSION['errorReg'])){
+                echo "<span class='alert alert-danger'>.$_SESSION['errorReg'].</span>";
         } ?>
     </div>
 

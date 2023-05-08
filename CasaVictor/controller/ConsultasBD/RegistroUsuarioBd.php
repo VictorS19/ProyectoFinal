@@ -1,20 +1,16 @@
 <?php
 
-namespace app\iberia\repositorio;
 
-use ConexionBd;
-use DateTime;
 
-class RegistroUsuarioRepositorio
-{
-
-    public function registrar(string $correo, string $pass,string $nombre,string $apellidos,string $dni,string $fechaNac)
+    public function registrarBd(string $correo, string $pass,string $nombre,string $apellidos,string $dni,string $fechaNac)
     {
+
+        //hacer dos consultas, con una verificamos que el dni no esta repetido (usuario ya registrado). Con la otra hacer el insert
         $sql = 'insert into usuario values (:correo,:pass,:rol)';
-        $sql2 = 'select idUsers from usuario where eCorreo = :ecorreo and pwd = :pwd';
+        $sql2 = 'select dni from usuarios dni = '.$dni;
         $sql3 = 'insert into pasajero values (:nombre,:apellido,:dni,:idUsr,:fNac)';
 
-        require_once __DIR__ . '/../../core/conexionBd.inc';
+        require_once '/../appConf/conexionBd.inc';
         
         try {
             //añadir a la tabla usuario
@@ -66,5 +62,5 @@ class RegistroUsuarioRepositorio
             unset($stn);
             unset($con);
         }
+    
     }
-}
