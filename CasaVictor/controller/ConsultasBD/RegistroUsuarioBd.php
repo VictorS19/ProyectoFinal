@@ -2,12 +2,12 @@
 
 
 
-    public function registrarBd(string $correo, string $pass,string $nombre,string $apellidos,string $dni,string $fechaNac)
+    public function registrarBd(string $dni,string $nombre,string $apellidos,string $fechaNac,string $correo, string $pass)
     {
 
-        //hacer dos consultas, con una verificamos que el dni no esta repetido (usuario ya registrado). Con la otra hacer el insert
-        $sql1 = 'select dni from usuarios where dni = '.$dni;
-        $sql2 = 'insert into usuarios values (:nombre,:apellidos,:dni,:fNac,:correo,:pass)';
+       
+        $sql1 = 'select dni from usuarios where upper(dni) = '.$dni;
+        $sql2 = 'insert into usuarios values (:dni,:nombre,:apellidos,:fNac,:correo,:pass)';
 
         require_once '/../appConf/conexionBd.inc';
     
@@ -30,13 +30,12 @@
         
 
         try {
-            //añadir a la tabla pasajero
+            //añadir a la tabla usuarios
             $con = (new \ConexionBd())->getConexion();
-            $stn = $con->prepare($sql3);
-            $stn->bindValue(":nombre", $nombre);
-            $stn->bindValue(":apellido", $apellidos);
+            $stn = $con->prepare($sql2);
             $stn->bindValue(":dni", $dni);
-            $stn->bindValue(":idUsr", $idUsuario);
+            $stn->bindValue(":nombre", $nombre);
+            $stn->bindValue(":apellidos", $apellidos);     
             $stn->bindValue(":fNac", $fechaNac);
             $stn->bindValue(":correo", $correo);
             $stn->bindValue(":pass", $pass);
@@ -45,11 +44,12 @@
         } catch (\PDOException $ex) {
             throw $ex;
         } finally {
+            if(isset($_SESSION['errorReg'])){unset($_SESSION['errorReg']);}
             unset($stn);
             unset($con);
         }
     }else{
-        //TODO mostrar error en el registro
+        $_SESSION['errorReg'] = "El usuario con dni: ".$dni." ya esta registrado en la base de datos";
 
     }
     }

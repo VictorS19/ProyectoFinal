@@ -7,7 +7,7 @@
       unset($_SESSION['datosSesion']);
     }
 
-
+      //coge la carpeta de comercio
     if (isset($_POST['registroOk'])) {
       $errorInput = false;
 
@@ -34,7 +34,7 @@
       
         require_once '/../ConsultasBD/RegistroUsuarioBd.php';
         //comparar pass haseada para el login: password_verify($pass, $passHashed);
-        $registro = registrarBd($correo, password_hash($pass,PASSWORD_DEFAULT),$nombre,$apellidos,$dni,$fechaNac);
+        $registro = registrarBd(upper($dni),$nombre,$apellidos,$fechaNac,$correo, password_hash($pass,PASSWORD_DEFAULT));
         $_SESSION['datosSesion'] = [$correo,$pass,$nombre];
         header('Location: ../../index.php');//TODO verificar ruta
 

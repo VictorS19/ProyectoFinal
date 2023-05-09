@@ -1,19 +1,14 @@
 <?php
 
-namespace app\iberia\repositorio;
 
-use ConexionBd;
-use DateTime;
 
-class LoginRepositorio
-{
 
     public function validar(string $correo):array
     {
        
-        $sql = 'select * from usuario as u inner join pasajero  as p on u.idUsers = p.idUsers where eCorreo = :correo';
+        $sql = 'select * from usuarios where correo = :correo';
        
-        require_once __DIR__ . '/../../core/conexionBd.inc';
+        require_once '/../appConf/conexionBd.inc';
         
         try {
             //extraer los datos del usuario con correo coincidente
@@ -38,4 +33,3 @@ class LoginRepositorio
         }
        
     }
-}

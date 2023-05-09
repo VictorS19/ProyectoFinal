@@ -1,3 +1,6 @@
+<?php  require "../../controller/Controlador/LoginController.php";
+login();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +34,7 @@
 
         </form>
         <?php if(isset($_SESSION['errorLog'])){
-                echo "<span class='alert alert-danger'>Error al iniciar sesión</span>";
+                echo "<span class='alert alert-danger'>".$_SESSION['errorLog']."</span>";
         } ?>
     </div>
 

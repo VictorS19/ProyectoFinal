@@ -36,12 +36,19 @@
         </div>
     </nav>
 
-    <main>
-        <div class="container m-3">
-            <h2 class="text-uppercase text-center fw-bold">Descubre nuestra carta</h2>
-
+    <main class="mainCarta">
+        <div class="container">
+            <h2 class="text-uppercase text-center fw-bold text-light p-2">Descubre nuestra carta</h2>
+            <hr class="hrCarta">
         </div>
-
+    <!-- una especie de nav, sticky, con cada menu asociado a un boton. Cuando se pulsa aparece un contenedor con el menu (con animación de entrada) -->
+    <!-- al pulsar el boton, php genera el contenedor con el menu (se crea en html parametrizado y se pasa por buffer), las clases permitiran que aparezca con una animación -->
+    <form class="row sticky-md-top text-center p-sm-2 p-md-3 ps-md-5 pe-md-5" method="post">
+            <input type="submit" class=" col-sm-5 col-md-2 m-2" name="Menu1" value="Menú Siete Hojas">
+            <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="Menu2" value="Menú Vid">
+            <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="Menu3" value="Menú Olivo">
+            <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="Menu4" value="Menú Fresal">  
+    </form>
     </main>
 
 
@@ -54,7 +61,7 @@
                 <div class="row mt-3">
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
+                       
                         <h6 class="text-uppercase fw-bold mb-4">
                             Casa Victor
                         </h6>

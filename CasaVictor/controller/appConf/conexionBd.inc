@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../app/conf/config.inc';
+require_once './config.inc';
 
 class ConexionBd
 { private $con;

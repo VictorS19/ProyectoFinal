@@ -1,23 +1,12 @@
 <?php
 
-namespace app\iberia\controlador;
 
-use app\iberia\repositorio\LoginRepositorio;
-
-
-class LoginController
-{
  
   public function login()
   {
 
     if(isset($_SESSION['datosSesion'])){
       unset($_SESSION['datosSesion']);
-    }
-
-    if (isset($_POST['irRegistro'])) {
-      header('Location: index.php?ctl=registrar');
-      
     }
 
     if (isset($_POST['loginOk'])) {
@@ -31,28 +20,26 @@ class LoginController
         
   
         if($errorInput){
-          $_SESSION['errorLog'] = 1;
+          $_SESSION['errorLog'] = "Rellene correctamente todos los campos para continuar";
         }else{
-          unset($_SESSION['errorLog']);
-          require_once __DIR__ . '/../Repositorio/LoginRepositorio.inc';
+          if(isset($_SESSION['errorLog'])){unset($_SESSION['errorLog']);}
+          
+          require_once '/../ConsultasBD/LoginBd.php';
           //comparar pass haseada para el login: password_verify($pass, $passHashed);
-          $datosUsr =  (new LoginRepositorio())->validar($correo);
+          $datosUsr = validar($correo);
 
-          if(!empty($datosUsr) && password_verify($pass, $datosUsr['pwd'])){
-            $_SESSION['datosSesion'] = [$datosUsr['eCorreo'],$datosUsr['pwd'],$datosUsr['nombre']];
-            header('Location: index.php?ctl=inicio');
+          if(!empty($datosUsr) && password_verify($pass, $datosUsr['pass'])){
+            $_SESSION['datosSesion'] = [$datosUsr['correo'],$datosUsr['pass'],$datosUsr['nombre']];
+            header('Location: ../../index.php');//TODO verificar ruta
           }else{
-            $_SESSION['errorLog'] = 1;
+            $_SESSION['errorLog'] = "Usuario o contraseña incorrectos";
           }
           
-          
-  
+
         }
   
       }
     
-    require __DIR__ . '/../../app/plantillas/codigoLogin.php';
   }
 
  
-}

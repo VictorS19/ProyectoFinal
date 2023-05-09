@@ -55,3 +55,13 @@ background-color: rgb(226, 228, 230);
     background-size: cover;
 }
 /*--------Fin Login y registro--------*/
+
+/*--------Carta--------*/
+
+.mainCarta{
+    background-color: rgb(13, 70, 5);
+}
+.hrCarta{
+    border-top: 3px solid rgb(230, 182, 53);
+}
+/*--------Fin Carta--------*/

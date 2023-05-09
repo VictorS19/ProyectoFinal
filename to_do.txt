@@ -1,0 +1,4 @@
+Logo del restaurante p3
+conectar bbdd   p10
+crear contenido menus con php p8
+Añadir memoria al repo
