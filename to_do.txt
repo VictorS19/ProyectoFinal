@@ -1,6 +1,5 @@
 Logo del restaurante p3
 conectar bbdd   p10
 crear contenido menus con php p8
-Añadir memoria al repo p10
 actualizar tabla platos con descripcion y nombreImagen p9
 
