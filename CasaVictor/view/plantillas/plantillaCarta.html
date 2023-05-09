@@ -1,3 +1,6 @@
+<?php  require "../../controller/Controlador/CartaController.php";
+mostrarCarta();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -41,14 +44,23 @@
             <h2 class="text-uppercase text-center fw-bold text-light p-2">Descubre nuestra carta</h2>
             <hr class="hrCarta">
         </div>
-    <!-- una especie de nav, sticky, con cada menu asociado a un boton. Cuando se pulsa aparece un contenedor con el menu (con animación de entrada) -->
-    <!-- al pulsar el boton, php genera el contenedor con el menu (se crea en html parametrizado y se pasa por buffer), las clases permitiran que aparezca con una animación -->
-    <form class="row sticky-md-top text-center p-sm-2 p-md-3 ps-md-5 pe-md-5" method="post">
-            <input type="submit" class=" col-sm-5 col-md-2 m-2" name="Menu1" value="Menú Siete Hojas">
-            <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="Menu2" value="Menú Vid">
-            <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="Menu3" value="Menú Olivo">
-            <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="Menu4" value="Menú Fresal">  
-    </form>
+        <!-- una especie de nav, sticky, con cada menu asociado a un boton. Cuando se pulsa aparece un contenedor con el menu (con animación de entrada) -->
+        <!-- al pulsar el boton, php genera el contenedor con el menu (se crea en html parametrizado y se pasa por buffer), las clases permitiran que aparezca con una animación -->
+        <form class="row sticky-md-top text-center p-sm-2 p-md-3 ps-md-5 pe-md-5" method="post">
+                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Siete Hojas">
+                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Vid">
+                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Olivo">
+                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Fresal">  
+         </form>
+
+         <div class="container ">
+            <p class="text-center"> <span class="bg-dark "></span> Entrantes</p>
+            <div class="row">
+                <div class="col col-10 col-md-7">Nombre Plato</div>
+                <div class="col col-md-3 rounded-circle">Imagen Plato</div>
+            </div>
+         </div>
+         <!-- <?= $cartaHtml ?> -->
     </main>
 
 
