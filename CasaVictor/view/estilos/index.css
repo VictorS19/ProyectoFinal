@@ -64,4 +64,8 @@ background-color: rgb(226, 228, 230);
 .hrCarta{
     border-top: 3px solid rgb(230, 182, 53);
 }
+.datosCartaV{
+    background-color: rgb(90, 116, 87);
+    font-family: 'Brush Script MT','Gill Sans',Calibri;
+}
 /*--------Fin Carta--------*/
