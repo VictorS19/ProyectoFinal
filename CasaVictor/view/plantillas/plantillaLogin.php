@@ -1,5 +1,8 @@
-<?php  require "../../controller/Controlador/LoginController.php";
-login();
+<?php  
+error_reporting(E_ALL);
+use app\controller\LoginController;
+require "../../controller/Controlador/LoginController.php";
+(new LoginController)->login();
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,7 +10,6 @@ login();
 <head>
     <title>Casa Victor</title>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"

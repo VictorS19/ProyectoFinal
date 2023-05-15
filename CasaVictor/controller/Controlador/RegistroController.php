@@ -1,5 +1,9 @@
 <?php
  
+ class RegistroController{
+
+
+
   public function registrar()
   {
 
@@ -34,7 +38,7 @@
       
         require_once '/../ConsultasBD/RegistroUsuarioBd.php';
         //comparar pass haseada para el login: password_verify($pass, $passHashed);
-        $registro = registrarBd(upper($dni),$nombre,$apellidos,$fechaNac,$correo, password_hash($pass,PASSWORD_DEFAULT));
+        $registro = (new RegistroUsuarioBd)->registrarBd(strtoupper($dni),$nombre,$apellidos,$fechaNac,$correo, password_hash($pass,PASSWORD_DEFAULT));
         $_SESSION['datosSesion'] = [$correo,$pass,$nombre];
         header('Location: ../../index.php');//TODO verificar ruta
 
@@ -42,5 +46,5 @@
 
     }
   }
-
+}
  

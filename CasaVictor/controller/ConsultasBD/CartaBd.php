@@ -1,6 +1,8 @@
 <?php
 
 
+class CartaBd{
+
 
 
     public function getMenu(string $nombreMenu):array
@@ -8,7 +10,7 @@
        
         $sql = 'select * from menus where nombre = :nombre';
        
-        require_once '/../appConf/conexionBd.inc';
+        require_once __DIR__.'..\appConf\conexionBd.inc';
         
         try {
             //extraer los datos del usuario con correo coincidente
@@ -33,3 +35,4 @@
         }
        
     }
+}

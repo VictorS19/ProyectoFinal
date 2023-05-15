@@ -1,5 +1,10 @@
 <?php
 
+namespace app\controller;
+
+use app\consultasBd\LoginBd;
+class LoginController {
+
 
  
   public function login()
@@ -24,9 +29,9 @@
         }else{
           if(isset($_SESSION['errorLog'])){unset($_SESSION['errorLog']);}
           
-          require_once '/../ConsultasBD/LoginBd.php';
+          //require_once __DIR__.'../ConsultasBD/LoginBd.php';
           //comparar pass haseada para el login: password_verify($pass, $passHashed);
-          $datosUsr = validar($correo);
+          //$datosUsr = (new LoginBd)->validar($correo);
 
           if(!empty($datosUsr) && password_verify($pass, $datosUsr['pass'])){
             $_SESSION['datosSesion'] = [$datosUsr['correo'],$datosUsr['pass'],$datosUsr['nombre']];
@@ -41,5 +46,5 @@
       }
     
   }
-
+}
  

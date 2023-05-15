@@ -1,5 +1,5 @@
 <?php  require "../../controller/Controlador/RegistroController.php";
-registrar();
+(new RegistroController)->registrar();
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +37,7 @@ registrar();
 
         </form>
         <?php if(isset($_SESSION['errorReg'])){
-                echo "<span class='alert alert-danger'>.$_SESSION['errorReg'].</span>";
+                echo "<span class='alert alert-danger'>".$_SESSION['errorReg']."</span>";
         } ?>
     </div>
 

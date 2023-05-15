@@ -1,14 +1,17 @@
 <?php
 
+namespace app\consultasBd;
 
+    class LoginBd{
 
+    
 
     public function validar(string $correo):array
     {
        
         $sql = 'select * from usuarios where correo = :correo';
        
-        require_once '/../appConf/conexionBd.inc';
+        require_once '../appConf/conexionBd.inc';
         
         try {
             //extraer los datos del usuario con correo coincidente
@@ -33,3 +36,4 @@
         }
        
     }
+}

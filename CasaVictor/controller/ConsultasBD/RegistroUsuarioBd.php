@@ -1,7 +1,8 @@
 <?php
 
+    class RegistroUsuarioBd{
 
-
+    
     public function registrarBd(string $dni,string $nombre,string $apellidos,string $fechaNac,string $correo, string $pass)
     {
 
@@ -53,3 +54,5 @@
 
     }
     }
+
+}
