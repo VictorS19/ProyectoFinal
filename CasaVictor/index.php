@@ -15,8 +15,8 @@
 
 <body>
     <header class="d-flex justify-content-center align-items-center">
-        <img class="img-fluid" src="./view/images/logoPequeno.png" alt="logo">
-        <h2 class="fw-bold fs-2">Casa Victor</h2>
+        <img class="img-fluid me-3 logoGeneral" src="./view/images/LogoDef.JPG" heiht="100" width="100" alt="logo">
+        <h2 class="fw-bold fs-2">Restaurante cinco hojas</h2>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light fs-3">
@@ -68,12 +68,9 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Casa Victor
+                            Cinco hojas
                         </h6>
-                        <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
-                        </p>
+                        <img class="img-fluid me-3 logoGeneral" src="./view/images/LogoDef.JPG" heiht="150" width="150" alt="logo">
                     </div>
                     <!-- Grid column -->
 

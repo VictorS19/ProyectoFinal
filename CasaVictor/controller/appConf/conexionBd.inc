@@ -5,7 +5,7 @@ class ConexionBd
 { private $con;
 
   public function __construct()
-  { $params = (new Configuracion())->getDbParams();
+  { $params = (new Configuracion())->getDatosConexion();
 
     try
     { $this->con = new PDO("sqlsrv:server={$params['server']},{$params['port']};

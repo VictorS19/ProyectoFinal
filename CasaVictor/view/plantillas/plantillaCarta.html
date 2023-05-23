@@ -44,26 +44,106 @@ mostrarCarta();
             <h2 class="text-uppercase text-center fw-bold text-light p-2">Descubre nuestra carta</h2>
             <hr class="hrCarta">
         </div>
-        <!-- una especie de nav, sticky, con cada menu asociado a un boton. Cuando se pulsa aparece un contenedor con el menu (con animación de entrada) -->
-        <!-- al pulsar el boton, php genera el contenedor con el menu (se crea en html parametrizado y se pasa por buffer), las clases permitiran que aparezca con una animación -->
-        <form class="row sticky-md-top text-center p-sm-2 p-md-3 ps-md-5 pe-md-5" method="post">
-                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Cinco Hojas">
+        <div class="row justify-content-around ">
+            <!-- una especie de nav, sticky, con cada menu asociado a un boton. Cuando se pulsa aparece un contenedor con el menu (con animación de entrada) -->
+            <!-- al pulsar el boton, php genera el contenedor con el menu (se crea en html parametrizado y se pasa por buffer), las clases permitiran que aparezca con una animación -->
+            <form class="col col-10 sticky-md-top text-center p-sm-2 p-md-3 ps-md-5 pe-md-5" method="post">
+                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta"
+                    value="Menú Cinco Hojas">
                 <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Vid">
                 <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Olivo">
-                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Fresal">  
-         </form>
+                <input type="submit" class="btn btn-light col-sm-5 col-md-2 m-2" name="MenuCarta" value="Menú Fresal">
+            </form>
 
-         <div class="container text-light text-center fw-bold datosCartaV">
-            <h2 class="fw-bolder ">Menú Vid</h2>
-            <div class="row">
-                <h3 class="text-center"> <span class="bg-dark "></span>Entrantes</h3>
-                <div class="row">
-                    <div class="col col-10 col-md-7">Nombre Plato</div>
-                    <div class="col col-md-3 rounded-circle">Imagen Plato</div>
+            <div class="container text-light text-center fw-bold datosCartaV m-4 p-4 col col-10">
+                <h1 class="fw-bolder ">Menú Vid</h1>
+                <!-- tipo plato -->
+                <div class="row justify-content-around">
+                    <h3 class="text-center texto-cabecera">Entrantes</h3>
+
+                    <!-- plato -->
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 ">Entrante 1</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 text-s">Entrante 2</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 ">Entrante 3</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="row justify-content-around">
+                    <h3 class="text-center texto-cabecera">Platos principales</h3>
+
+                    <!-- plato -->
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 ">Plato 1</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 text-s">Plato 2</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 ">Plato 3</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="row justify-content-around">
+                    <h3 class="text-center texto-cabecera">Postres</h3>
+
+                    <!-- plato -->
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 ">Postre 1</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
+                    <div class="row m-3 align-items-center texto-items">
+                        <div class="col col-10 col-md-7 text-s">Postre 2</div>
+                        <div class="col col-md-3 rounded-circle">
+                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="100" width="100"
+                                alt="entrante1">
+                        </div>
+                    </div>
+
                 </div>
             </div>
-         </div>
-         <!-- <?= $cartaHtml ?> -->
+            <!-- <?= $cartaHtml ?> -->
+        </div>
     </main>
 
 
@@ -76,7 +156,7 @@ mostrarCarta();
                 <div class="row mt-3">
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                       
+
                         <h6 class="text-uppercase fw-bold mb-4">
                             Cinco Hojas
                         </h6>

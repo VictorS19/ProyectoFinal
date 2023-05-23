@@ -1,25 +1,25 @@
 <?php
-/* configuraciones comunes a la aplicación */
+
 class configuracion
 {
-  private $dbParams = []; /*Vector con parámetros de configuración del SGBD */
+  private $datosConexion = []; 
 
   public function __construct()
   {
-    $this->dbParams =
+    $this->datosConexion =
       [
-        "driver" => "pdo_sqlsrv", //no utilizada realmente
-        "server" => "(local)", //nombre servidor
-        "port" => "3307", //puerto por el que escucha las peticiones de la aplicación
-        "database" => "proyectodaw", //nombre de la base de datos
-        "user" => null, //usuario definido para la aplicación
-        "pass" => null, //contraseña del usuario
-        "charset" => "utf-8" //conjunto de caracteres
+        "driver" => "pdo_sqlsrv", 
+        "server" => "localhost", 
+        "port" => "3307", 
+        "database" => "proyectodaw", 
+        "user" => null, 
+        "pass" => null, 
+        "charset" => "utf-8" 
       ];
   }
 
-  public function getDbParams(): array
+  public function getDatosConexion(): array
   {
-    return $this->dbParams;
+    return $this->datosConexion;
   }
 }

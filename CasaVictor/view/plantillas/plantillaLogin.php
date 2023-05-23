@@ -8,7 +8,7 @@ require "../../controller/Controlador/LoginController.php";
 <html>
 
 <head>
-    <title>Casa Victor</title>
+    <title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>
@@ -22,7 +22,7 @@ require "../../controller/Controlador/LoginController.php";
     <div class="container mt-5 col-6">
 
         <form action="" method="post" class="form formV">
-            <h2>¡Inicia sesión para reservar en Casa Victor!</h2>
+            <h2>¡Inicia sesión para reservar en Cinco Hojas!</h2>
 
             <label class="form-label">Correo: <input type="email" class="form-text" name="correoLog"
                     require></label><br>

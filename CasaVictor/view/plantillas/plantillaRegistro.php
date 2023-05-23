@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title>Casa Victor</title>
+    <title>Registro</title>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
     <div class="container mt-5 col-6">
 
         <form action="" method="post" class="form formV">
-            <h2>!Registrate en Casa Victor!</h2>
+            <h2>!Registrate en Cinco Hojas!</h2>
 
             <label class="form-label">Nombre: <input type="text" class="form-text" name="nombre" require></label><br>
             <label class="form-label">Apellidos: <input type="text" class="form-text" name="apellidos" require></label><br>
