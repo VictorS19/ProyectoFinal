@@ -9,6 +9,7 @@ require "../../controller/Controlador/LoginController.php";
 
 <head>
     <title>Login</title>
+    <link rel="shortcut icon" href="../images/LogoDef.JPG" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>

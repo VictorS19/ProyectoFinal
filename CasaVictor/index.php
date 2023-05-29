@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Victor</title>
+    <title>Cinco Hojas</title>
+    <link rel="shortcut icon" href="view/images/LogoDef.JPG"/>
     <link rel="stylesheet" href="./view/estilos/index.css">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,9 +30,9 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     <a class="nav-link" href="./view/plantillas/plantillaCarta.php">Carta</a>
-                    <a class="nav-link" href="#">Platos</a>
+                    <a class="nav-link" href="./view/plantillas/plantillaPlatos.php">Platos</a>
                     <a class="nav-link" href="./view/plantillas/plantillaLogin.php">Reserva</a>
-                    <a class="nav-link" href="#">Conócenos</a>
+                    <a class="nav-link" href="./view/plantillas/plantillaConocenos.php">Conócenos</a>
                 </div>
             </div>
         </div>
@@ -105,14 +106,9 @@
                             <a href="#!" class="text-reset text-decoration-none">Política de privacidad</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset text-decoration-none">Settings</a>
+                            <a href="#!" class="text-reset text-decoration-none">Iniciar Sesión</a>
                         </p>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Orders</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Help</a>
-                        </p>
+                    
                     </div>
                     <!-- Grid column -->
 

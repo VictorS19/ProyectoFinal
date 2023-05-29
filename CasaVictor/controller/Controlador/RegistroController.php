@@ -20,7 +20,7 @@
       $apellidos = $_POST['apellidos'];
       if(strlen($apellidos) < 3){ $errorInput = true ;}
       $dni = $_POST['dni'];
-      if(strlen($dni) < 3){ $errorInput = true ;}
+      if(strlen($dni) < 8 ){ $errorInput = true ;}
       $fechaNac = $_POST['fechaNac'];
       if(strlen($fechaNac) < 3){ $errorInput = true ;}
       $correo = $_POST['correo'];
@@ -37,10 +37,9 @@
         if(isset($_SESSION['errorReg'])){unset($_SESSION['errorReg']);}
       
         require_once '/../ConsultasBD/RegistroUsuarioBd.php';
-        //comparar pass haseada para el login: password_verify($pass, $passHashed);
         $registro = (new RegistroUsuarioBd)->registrarBd(strtoupper($dni),$nombre,$apellidos,$fechaNac,$correo, password_hash($pass,PASSWORD_DEFAULT));
         $_SESSION['datosSesion'] = [$correo,$pass,$nombre];
-        header('Location: ../../index.php');//TODO verificar ruta
+        header('Location: ../../index.php');
 
       }
 
