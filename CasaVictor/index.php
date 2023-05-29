@@ -31,7 +31,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                     <a class="nav-link" href="./view/plantillas/plantillaCarta.php">Carta</a>
                     <a class="nav-link" href="./view/plantillas/plantillaPlatos.php">Platos</a>
-                    <a class="nav-link" href="./view/plantillas/plantillaLogin.php">Reserva</a>
+                    <a class="nav-link" href="./view/plantillas/plantillaReserva.php">Reserva</a>
                     <a class="nav-link" href="./view/plantillas/plantillaConocenos.php">Conócenos</a>
                 </div>
             </div>
@@ -43,15 +43,15 @@
 
         <!-- tarjetas de enlaces rapidos -->
         <div class="row d-flex justify-content-center">
-            <a href="#" class=" rounded text-center m-4 p-3 bg-primary col-9 col-md-3 tarjCarta">
+            <a href="./view/plantillas/plantillaCarta.php" class=" rounded text-center m-4 p-3 bg-primary col-9 col-md-3 tarjCarta">
                 <span class="badge bg-light text-black-50 fs-5">Carta</span>
 
             </a>
-            <a href="#" class=" rounded text-center m-4 p-3 bg-primary col-9 col-md-3 tarjPlatos">
+            <a href="./view/plantillas/plantillaPlatos.php" class=" rounded text-center m-4 p-3 bg-primary col-9 col-md-3 tarjPlatos">
                 <span class="badge bg-light text-black-50 fs-5">Platos</span>
 
             </a>
-            <a href="#" class=" rounded text-center m-4 p-3 bg-primary col-9 col-md-3 tarjReserva">
+            <a href="./view/plantillas/plantillaReserva.php" class=" rounded text-center m-4 p-3 bg-primary col-9 col-md-3 tarjReserva">
                 <span class="badge bg-light text-black-50 fs-5">Reserva</span>
 
             </a>
@@ -60,45 +60,45 @@
 
     <footer class="text-center text-lg-start text-muted border-top">
 
-        <!-- Section: Links  -->
+        
         <section class="">
             <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
+               
                 <div class="row mt-3">
-                    <!-- Grid column -->
+                   
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
+                        
                         <h6 class="text-uppercase fw-bold mb-4">
                             Cinco hojas
                         </h6>
                         <img class="img-fluid me-3 logoGeneral" src="./view/images/LogoDef.JPG" heiht="150" width="150" alt="logo">
                     </div>
-                    <!-- Grid column -->
+                    
 
-                    <!-- Grid column -->
+                   
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
+                        
                         <h6 class="text-uppercase fw-bold mb-4">
                             Páginas
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset text-decoration-none">Carta</a>
+                            <a href="./view/plantillas/plantillaCarta.php" class="text-reset text-decoration-none">Carta</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset text-decoration-none">Platos</a>
+                            <a href="./view/plantillas/plantillaPlatos.php" class="text-reset text-decoration-none">Platos</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset text-decoration-none">Reserva</a>
+                            <a href="./view/plantillas/plantillaReserva.php" class="text-reset text-decoration-none">Reserva</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset text-decoration-none">Conócenos</a>
+                            <a href="./view/plantillas/plantillaConocenos.php" class="text-reset text-decoration-none">Conócenos</a>
                         </p>
                     </div>
-                    <!-- Grid column -->
+                    
 
-                    <!-- Grid column -->
+                    
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
+                        
                         <h6 class="text-uppercase fw-bold mb-4">
                             Otros enlaces
                         </h6>
@@ -106,15 +106,14 @@
                             <a href="#!" class="text-reset text-decoration-none">Política de privacidad</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset text-decoration-none">Iniciar Sesión</a>
+                            <a href="./view/plantillas/plantillaLogin.php" class="text-reset text-decoration-none">Iniciar Sesión</a>
                         </p>
                     
                     </div>
-                    <!-- Grid column -->
+                   
 
-                    <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
+                       
                         <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
                         <p><i class="fas fa-home me-3"></i> Logroño (La Rioja) 26004</p>
                         <p>
@@ -123,14 +122,14 @@
                         </p>
                         <p><i class="fas fa-phone me-3"></i> 623 34 45 32</p>
                     </div>
-                    <!-- Grid column -->
+                   
                     <div class="col-md-2 mb-5">
                         <a class="alert alert-secondary text-decoration-none" href="http://www.freepik.com">Images by
                             Freepik</a>
 
                     </div>
                 </div>
-                <!-- Grid row -->
+            
             </div>
 
         </section>

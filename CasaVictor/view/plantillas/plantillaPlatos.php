@@ -31,10 +31,10 @@ mostrarCarta();
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link " aria-current="page" href="../../index.php">Inicio</a>
-                    <a class="nav-link" href="#">Carta</a>
+                    <a class="nav-link " href="./plantillaCarta.php">Carta</a>
                     <a class="nav-link active" href="#">Platos</a>
-                    <a class="nav-link" href="#">Reserva</a>
-                    <a class="nav-link" href="#">Conócenos</a>
+                    <a class="nav-link" href="./plantillaReserva.php">Reserva</a>
+                    <a class="nav-link" href="./plantillaConocenos.php">Conócenos</a>
                 </div>
             </div>
         </div>
@@ -102,8 +102,7 @@ mostrarCarta();
                 <img src="../images/LogoDef.JPG" class="card-img-top img-fluid" alt="nombrePlato">
                 <div class="card-body">
                     <h5 class="card-title">Trufas con chocolate al vino tinto</h5>
-                    <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y
-                        componer la mayor parte del contenido de la tarjeta.</p>
+                    <p class="card-text">Postre típico en España donde las trufas son las protagonistas.</p>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Alergenos</h5>
@@ -116,8 +115,7 @@ mostrarCarta();
                 <img src="../images/LogoDef.JPG" class="card-img-top img-fluid" alt="nombrePlato">
                 <div class="card-body">
                     <h5 class="card-title">Trufas con chocolate al vino tinto</h5>
-                    <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y
-                        componer la mayor parte del contenido de la tarjeta.</p>
+                    <p class="card-text">Postre típico en España donde las trufas son las protagonistas.</p>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Alergenos</h5>
@@ -130,8 +128,7 @@ mostrarCarta();
                 <img src="../images/LogoDef.JPG" class="card-img-top img-fluid" alt="nombrePlato">
                 <div class="card-body">
                     <h5 class="card-title">Trufas con chocolate al vino tinto</h5>
-                    <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y
-                        componer la mayor parte del contenido de la tarjeta.</p>
+                    <p class="card-text">Postre típico en España donde las trufas son las protagonistas.</p>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Alergenos</h5>
@@ -141,14 +138,14 @@ mostrarCarta();
             </div>
 
             <div class="card m-3 fondoVerde col col-7 col-md-4 col-lg-3 col-xxl-2 m-xxl-5">
-                <img src="../images/<?= $imagenPlato?>" class="card-img-top img-fluid" alt="nombrePlato">
+                <img src="../images/LogoDef.JPG" class="card-img-top img-fluid" alt="nombrePlato">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $nombrePlato?></h5>
-                    <p class="card-text"><?= $descripcionPlato?></p>
+                    <h5 class="card-title">Trufas con chocolate al vino tinto</h5>
+                    <p class="card-text">Postre típico en España donde las trufas son las protagonistas.</p>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Alergenos</h5>
-                    <p class="card-text"><?= $alergenosPlato?></p>
+                    <p class="card-text">Contiene frutos de cáscara</p>
                 </div>
 
             </div>
@@ -158,83 +155,81 @@ mostrarCarta();
 
     <footer class="text-center text-lg-start text-muted border-top">
 
-        <!-- Section: Links  -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Cinco hojas
-                        </h6>
-                        <img class="img-fluid me-3 logoGeneral" src="../images/LogoDef.JPG" heiht="150" width="150"
-                            alt="logo">
-                    </div>
-                    <!-- Grid column -->
 
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Páginas
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Carta</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Platos</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Reserva</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Conócenos</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Otros enlaces
-                        </h6>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Política de privacidad</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-reset text-decoration-none">Iniciar Sesión</a>
-                        </p>
-
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-                        <p><i class="fas fa-home me-3"></i> Logroño (La Rioja) 26004</p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            visaenz99@gmail.com
-                        </p>
-                        <p><i class="fas fa-phone me-3"></i> 623 34 45 32</p>
-                    </div>
-                    <!-- Grid column -->
-                    <div class="col-md-2 mb-5">
-                        <a class="alert alert-secondary text-decoration-none" href="http://www.freepik.com">Images by
-                            Freepik</a>
-
-                    </div>
-                </div>
-                <!-- Grid row -->
+<section class="">
+    <div class="container text-center text-md-start mt-5">
+        
+        <div class="row mt-3">
+           
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                
+                <h6 class="text-uppercase fw-bold mb-4">
+                    Cinco hojas
+                </h6>
+                <img class="img-fluid me-3 logoGeneral" src="../images/LogoDef.JPG" heiht="150" width="150" alt="logo">
             </div>
+            
 
-        </section>
+           
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+               
+                <h6 class="text-uppercase fw-bold mb-4">
+                    Páginas
+                </h6>
+                <p>
+                    <a href="./plantillaCarta.php" class="text-reset text-decoration-none">Carta</a>
+                </p>
+                <p>
+                    <a href="./plantillaPlatos.php" class="text-reset text-decoration-none">Platos</a>
+                </p>
+                <p>
+                    <a href="./plantillaReserva.php" class="text-reset text-decoration-none">Reserva</a>
+                </p>
+                <p>
+                    <a href="./plantillaConocenos.php" class="text-reset text-decoration-none">Conócenos</a>
+                </p>
+            </div>
+            
 
-    </footer>
+            
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+               
+                <h6 class="text-uppercase fw-bold mb-4">
+                    Otros enlaces
+                </h6>
+                <p>
+                    <a href="#!" class="text-reset text-decoration-none">Política de privacidad</a>
+                </p>
+                <p>
+                    <a href="./plantillaLogin.php" class="text-reset text-decoration-none">Iniciar Sesión</a>
+                </p>
+            
+            </div>
+            
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                
+                <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                <p><i class="fas fa-home me-3"></i> Logroño (La Rioja) 26004</p>
+                <p>
+                    <i class="fas fa-envelope me-3"></i>
+                    visaenz99@gmail.com
+                </p>
+                <p><i class="fas fa-phone me-3"></i> 623 34 45 32</p>
+            </div>
+            
+            <div class="col-md-2 mb-5">
+                <a class="alert alert-secondary text-decoration-none" href="http://www.freepik.com">Images by
+                    Freepik</a>
+
+            </div>
+        </div>
+       
+    </div>
+
+</section>
+
+</footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

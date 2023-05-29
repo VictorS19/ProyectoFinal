@@ -8,7 +8,7 @@ mostrarCarta();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conócenos</title>
+    <title>Reserva</title>
     <link rel="shortcut icon" href="../images/LogoDef.JPG" />
     <link rel="stylesheet" href="../estilos/index.css">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@ mostrarCarta();
 <body>
     <header class="d-flex justify-content-center align-items-center">
         <img class="img-fluid me-3 logoGeneral" src="../images/LogoDef.JPG" heiht="100" width="100" alt="logo">
-        <h2 class="fw-bold fs-2">Conócenos</h2>
+        <h2 class="fw-bold fs-2">Reserva</h2>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light fs-3">
@@ -33,47 +33,55 @@ mostrarCarta();
                     <a class="nav-link " aria-current="page" href="../../index.php">Inicio</a>
                     <a class="nav-link " href="./plantillaCarta.php">Carta</a>
                     <a class="nav-link " href="./plantillaPlatos.php">Platos</a>
-                    <a class="nav-link " href="./plantillaReserva.php">Reserva</a>
-                    <a class="nav-link active" href="#">Conócenos</a>
+                    <a class="nav-link active" href="#">Reserva</a>
+                    <a class="nav-link" href="./plantillaConocenos.php">Conócenos</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="fondoVerde p-5">
+    <main class="mainCarta">
+        <div class="container">
+            <h2 class="text-uppercase text-center fw-bold text-light p-2">Reserva una mesa en Cinco Hojas</h2>
+            <hr class="hrCarta">
+        </div>
+        <div class="row justify-content-around ">
 
 
-        <div class="row justify-content-around bg-light rounded">
+            <div
+                class="row justify-content-around text-light text-center fw-bold fondoVerde rounded m-4 p-4 col col-10">
 
-            <div class="col col-lg-8 ">
-                <h2 class="text-uppercase  fw-bold  p-4">Datos de Contacto</h2>
-                <hr class="hrCarta">
+                <form class="col col-9 col-md-3 text-center p-3" method="post">
+                    <label for="fechaReserva"  class="form-label">Fecha de la reserva</label>
+                    <input type="date" min="2023-05-29" value="2023-05-29" class="form-control text-center" name="fechaReserva">
 
-                <p><span class="fw-bold">Dirección: </span> Logroño (La Rioja) 26004</p>
-                <p><span class="fw-bold">Teléfono: </span> 623 34 45 32</p>
-                <p><span class="fw-bold">Correo Electrónico Para Consultas: </span> info@cincohojas.com</p>
-                <p><span class="fw-bold">Correo Electrónico Comercial: </span> comercial@cincohojas.com</p>
+                    <label for="numComensales" class="form-label">Número de comensales</label>
+                    <input type="number" class="form-control text-center" name="numComensales" value="1" max="6"
+                        min="1">
+
+                    <input type="submit" class="btn btn-light m-3" name="FechaOk" value="Elegir hora">
+                </form>
+
+                <form class="col col-9 col-md-3 text-center p-3 " method="post">
+                    <label class="form-label">Horas disponibles</label>
+                    <select name="horaReserva" class="form-select form-select-lg text-center">
+
+                        <option value="ko" selected>Elige la hora</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="21:00">21:00</option>
+                        <option value="22:00">22:00</option>
+                    </select>
 
 
 
-                <h2 class="text-uppercase  fw-bold  p-2">Ubicación</h2>
-                <hr class="hrCarta">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218.75643996359074!2d-2.4503741970452433!3d42.465522274053804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5aab4807b0e213%3A0xc648f043158bed5a!2sAv.%20Portugal%2C%2032%2C%2026001%20Logro%C3%B1o%2C%20La%20Rioja!5e0!3m2!1ses!2ses!4v1685288066518!5m2!1ses!2ses"
-                    style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <input type="submit" class="btn btn-light m-3" name="ReservaOk" value="Reservar">
+                </form>
 
-
-
-
-                <h2 class="text-uppercase  fw-bold  p-2">Acerca del Restaurante</h2>
-                <hr class="hrCarta">
-                <p>Cinco hojas es un restaurante en el que pretendemos darle valor a la comida de nuestra zona, en
-                    nuestros menús degustación se puede disfrutar de las versiones mas atrevidas de los platos mas
-                    conocidos de La Rioja y gran parte de España. Además llevamos a cabo un proyecto de sostenibilidad
-                    con el medio ambiente, plasmado también en el nombre de los menús que ofrecemos. Esperemos que
-                    disfrutes, el equipo de Cinco Hojas</p>
 
             </div>
+
         </div>
     </main>
 
