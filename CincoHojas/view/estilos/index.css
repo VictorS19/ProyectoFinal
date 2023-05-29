@@ -1,0 +1,95 @@
+body{
+    border: 0;
+    margin: 0;
+    padding: 0;
+ 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logoGeneral{
+    border-radius: 9px;
+}
+/*--------Index--------*/
+header {
+    height: 100px;
+    
+}
+
+
+nav {
+    background-color: rgb(230, 190, 81);
+}
+
+
+
+.tarjCarta{
+    background-image: url('../images/carta.jpg');
+    background-size: cover;
+    height: 80px;
+}
+
+.tarjPlatos{
+    background-image: url('../images/menus.jpg');
+    background-size: cover;
+    height: 80px;
+}
+
+.tarjReserva{
+    background-image: url('../images/reservas.jpg');
+    background-size: cover;
+    height: 80px;
+}
+footer{
+background-color: rgb(226, 228, 230);
+}
+/*--------Fin Index--------*/
+
+/*--------Login y registro--------*/
+
+.formV {
+    border: solid rgb(11, 5, 29) 1px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(234, 234, 234);
+}
+.bodyLoginReg{
+    background-image: url('../images/fondoLoginReg.jpg');
+    background-size: cover;
+}
+/*--------Fin Login y registro--------*/
+
+/*--------Carta--------*/
+
+.mainCarta{
+    background-color: rgb(13, 70, 5);
+}
+.hrCarta{
+    border-top: 3px solid rgb(230, 182, 53);
+}
+.datosCartaV{
+    /*background-color: rgb(90, 116, 87);*/
+    background-image: url('../images/fondoCarta.png');
+    background-size: cover;
+    font-family: 'Brush Script MT','Gill Sans',Calibri;
+}
+.texto-cabecera{
+font-size: 25pt;
+}
+.texto-items{
+    font-size: 20pt;
+    }
+/*--------Fin Carta--------*/
+
+/*--------Platos--------*/
+
+.fondoVerde{
+    background-color: rgb(145 , 188, 161) !important;
+}
+
+/*--------Fin Platos--------*/
+
+
+/*--------Reserva--------*/
+
+/*--------Fin Reserva--------*/
