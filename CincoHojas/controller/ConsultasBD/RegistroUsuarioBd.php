@@ -1,21 +1,26 @@
 <?php
+namespace app\consultasBd;
+
+use app\conf\conexionBd;
 
     class RegistroUsuarioBd{
 
-    
+       
+
     public function registrarBd(string $dni,string $nombre,string $apellidos,string $fechaNac,string $correo, string $pass)
     {
 
        
-        $sql1 = 'select dni from usuarios where upper(dni) = '.$dni;
-        $sql2 = 'insert into usuarios values (:dni,:nombre,:apellidos,:fNac,:correo,:pass)';
+        $sql1 = 'select dni from usuarios where upper(dni) = :dniUser';
+        $sql2 = 'insert into usuarios values(:dni,:nombre,:apellidos,:fNac,:correo,:pass,0)';
 
-        require_once '/../appConf/conexionBd.inc';
+        require __DIR__.'/../appConf/conexionBd.php';
     
         try {
             //consultar si el dni del usuario ya existe
-            $con = (new \ConexionBd())->getConexion();
+            $con = (new conexionBd())->getConexion();
             $stn = $con->prepare($sql1);
+            $stn->bindValue(":dniUser", $dni);
             $stn->execute();
             $result = $stn->fetchAll(\PDO::FETCH_ASSOC);
         } catch (\PDOException $ex) {
@@ -32,7 +37,7 @@
 
         try {
             //añadir a la tabla usuarios
-            $con = (new \ConexionBd())->getConexion();
+            $con = (new conexionBd())->getConexion();
             $stn = $con->prepare($sql2);
             $stn->bindValue(":dni", $dni);
             $stn->bindValue(":nombre", $nombre);
@@ -51,7 +56,6 @@
         }
     }else{
         $_SESSION['errorReg'] = "El usuario con dni: ".$dni." ya esta registrado en la base de datos";
-
     }
     }
 

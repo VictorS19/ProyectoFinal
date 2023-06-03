@@ -1,5 +1,8 @@
 <?php
- 
+ namespace app\controller;
+
+ use app\consultasBd\RegistroUsuarioBd;
+
  class RegistroController{
 
 
@@ -16,9 +19,9 @@
       $errorInput = false;
 
       $nombre = $_POST['nombre'];
-      if(strlen($nombre) < 3){ $errorInput = true ;}
+      if(strlen($nombre) < 2){ $errorInput = true ;}
       $apellidos = $_POST['apellidos'];
-      if(strlen($apellidos) < 3){ $errorInput = true ;}
+      if(strlen($apellidos) < 2){ $errorInput = true ;}
       $dni = $_POST['dni'];
       if(strlen($dni) < 8 ){ $errorInput = true ;}
       $fechaNac = $_POST['fechaNac'];
@@ -26,7 +29,7 @@
       $correo = $_POST['correo'];
       if(strlen($correo) < 3){ $errorInput = true ;}
       $pass = $_POST['pass'];
-      if(strlen($pass) < 3){ $errorInput = true ;}
+      if(strlen($pass) < 6){ $errorInput = true ;}
       $pass2 = $_POST['pass2'];
       if($pass != $pass2){ $errorInput = true ;}
 
@@ -36,7 +39,7 @@
 
         if(isset($_SESSION['errorReg'])){unset($_SESSION['errorReg']);}
       
-        require_once '/../ConsultasBD/RegistroUsuarioBd.php';
+        require_once __DIR__.'\..\ConsultasBD\RegistroUsuarioBd.php';
         $registro = (new RegistroUsuarioBd)->registrarBd(strtoupper($dni),$nombre,$apellidos,$fechaNac,$correo, password_hash($pass,PASSWORD_DEFAULT));
         $_SESSION['datosSesion'] = [$correo,$pass,$nombre];
         header('Location: ../../index.php');

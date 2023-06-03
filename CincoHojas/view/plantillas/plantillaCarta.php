@@ -1,5 +1,8 @@
-<?php  require "../../controller/Controlador/CartaController.php";
-mostrarCarta();
+<?php  
+use app\controller\CartaController;
+require "../../controller/Controlador/CartaController.php";
+ (new CartaController)->mostrarCarta();
+ 
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,93 +60,10 @@ mostrarCarta();
             </form>
 
             <div class="container text-light text-center fw-bold datosCartaV m-4 p-4 col col-10">
-                <h1 class="fw-bolder ">Menú Vid</h1>
-                <!-- tipo plato -->
-                <div class="row justify-content-around">
-                    <h3 class="text-center texto-cabecera">Entrantes</h3>
 
-                    <!-- plato -->
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 ">Ensalada verde con manzana y beicon</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 text-s">Huevo trufados con patatas y setas</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 ">Rulos de Pimiento Riojano con láminas de bacalao</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div class="row justify-content-around">
-                    <h3 class="text-center texto-cabecera">Platos principales</h3>
-
-                    <!-- plato -->
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 ">Rabo de Toro al estilo riojano marinado vino</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 text-s">Solomillo de cerdo con salsa de foie</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 ">Entrecot de ternera a la plancha</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div class="row justify-content-around">
-                    <h3 class="text-center texto-cabecera">Postres</h3>
-
-                    <!-- plato -->
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 ">Milhojas de Pera de Rincón de Soto</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-                    <div class="row m-3 align-items-center texto-items">
-                        <div class="col col-10 col-md-7 text-s">Trufas con chocolate al vino tinto</div>
-                        <div class="col col-md-3 rounded-circle">
-                            <img class="img-fluid rounded-circle" src="../images/LogoDef.JPG" height="150" width="150"
-                                alt="entrante1">
-                        </div>
-                    </div>
-
-                </div>
+            <?php if(isset($_POST["MenuCarta"])){echo $_SESSION["cartaMenu"];} ?>
             </div>
-            <!-- <?= $cartaHtml ?> -->
+            
         </div>
     </main>
 

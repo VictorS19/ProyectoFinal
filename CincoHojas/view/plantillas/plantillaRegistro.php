@@ -1,4 +1,6 @@
-<?php  require "../../controller/Controlador/RegistroController.php";
+<?php  
+use app\controller\RegistroController;
+require "../../controller/Controlador/RegistroController.php";
 (new RegistroController)->registrar();
 ?>
 <!DOCTYPE html>

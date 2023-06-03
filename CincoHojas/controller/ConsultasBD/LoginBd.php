@@ -1,21 +1,22 @@
 <?php
-
 namespace app\consultasBd;
+
+use app\conf\conexionBd;
 
     class LoginBd{
 
-    
+        
 
     public function validar(string $correo):array
     {
        
         $sql = 'select * from usuarios where correo = :correo';
-       
-        require_once '../appConf/conexionBd.inc';
+        require __DIR__.'/../appConf/conexionBd.php';
+        
         
         try {
             //extraer los datos del usuario con correo coincidente
-            $con = (new \ConexionBd())->getConexion();
+            $con = (new conexionBd)->getConexion();
             $stn = $con->prepare($sql);
             $stn->bindValue(":correo", $correo);
             $stn->execute();

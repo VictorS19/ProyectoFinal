@@ -1,5 +1,7 @@
-<?php  require "../../controller/Controlador/CartaController.php";
-mostrarCarta();
+<?php 
+use app\controller\CartaController;
+require "../../controller/Controlador/CartaController.php";
+(new CartaController)->mostrarCarta();
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,4 +1,5 @@
 <?php  
+
 error_reporting(E_ALL);
 use app\controller\LoginController;
 require "../../controller/Controlador/LoginController.php";

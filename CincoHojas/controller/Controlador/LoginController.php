@@ -21,7 +21,7 @@ class LoginController {
         $correo = $_POST['correoLog'];
         if(strlen($correo) < 3){ $errorInput = true ;}
         $pass = $_POST['passLog'];
-        if(strlen($pass) < 3){ $errorInput = true ;}
+        if(strlen($pass) < 6){ $errorInput = true ;}
         
   
         if($errorInput){
@@ -29,11 +29,10 @@ class LoginController {
         }else{
           if(isset($_SESSION['errorLog'])){unset($_SESSION['errorLog']);}
           
-          //require_once __DIR__.'../ConsultasBD/LoginBd.php';
-          //comparar pass haseada para el login: password_verify($pass, $passHashed);
-          //$datosUsr = (new LoginBd)->validar($correo);
+          require_once __DIR__.'./../ConsultasBD/LoginBd.php';
+          $datosUsr = (new LoginBd)->validar($correo);
 
-          if(!empty($datosUsr) && password_verify($pass, $datosUsr['pass'])){
+          if(!empty($datosUsr) && /*password_verify($pass, $datosUsr['pass'])*/$pass == $datosUsr['pass']){
             $_SESSION['datosSesion'] = [$datosUsr['correo'],$datosUsr['pass'],$datosUsr['nombre']];
             header('Location: ../../index.php');//TODO verificar ruta
           }else{
