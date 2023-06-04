@@ -71,7 +71,7 @@ background-color: rgb(226, 228, 230);
     /*background-color: rgb(90, 116, 87);*/
     background-image: url('../images/fondoCarta.png');
     background-size: cover;
-    font-family: 'Brush Script MT','Gill Sans',Calibri;
+    font-family: 'Brush Script MT','poppins','Gill Sans',Calibri;
 }
 .texto-cabecera{
 font-size: 25pt;

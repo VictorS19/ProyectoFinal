@@ -37,11 +37,11 @@ require "../../controller/Controlador/RegistroController.php";
             <a href="./plantillaLogin.php" class="btn btn-secondary">Ir al Login</a><br>
 
             
-
-        </form>
-        <?php if(isset($_SESSION['errorReg'])){
-                echo "<span class='alert alert-danger'>".$_SESSION['errorReg']."</span>";
+            <?php if(isset($_SESSION['errorReg'])){
+                echo "<p class='alert alert-danger m-2'>".$_SESSION['errorReg']."</p>";
         } ?>
+        </form>
+       
     </div>
 
 

@@ -6,7 +6,6 @@
 
  class CartaController{
 
- 
  function mostrarCarta()
   {
     if (isset($_POST['MenuCarta'])) {
@@ -41,8 +40,8 @@
         
         <div class='row m-3 align-items-center texto-items'>
         <div class='col col-10 col-md-7 '>".$value["nombre"]."</div>
-        <div class='col col-md-3 rounded-circle'>
-            <img class='img-fluid rounded-circle' ". $urlImagen ." height='150' width='150'
+        <div class='col col-xl-3 rounded-circle'>
+            <img class='rounded-circle' ". $urlImagen ." height='150' width='150'
                 alt='entrante'>
         </div>
         </div> 
@@ -55,18 +54,18 @@
 
    // Platos principales
    echo "<div class='row justify-content-around'>";
-   echo "<h3 class='text-center texto-cabecera'>Entrantes</h3>";
+   echo "<h3 class='text-center texto-cabecera'>Platos Principales</h3>";
 
    foreach ($datosMenu as $value) {
-     if($value["tipoplato"] == "entrante"){
+     if($value["tipoplato"] == "Plato principal"){
        $urlImagen = "src='../imagesPlatos/".$value["nombreimagen"]. " ' ";
        echo "
        
        <div class='row m-3 align-items-center texto-items'>
        <div class='col col-10 col-md-7 '>".$value["nombre"]."</div>
-       <div class='col col-md-3 rounded-circle'>
-           <img class='img-fluid rounded-circle' ". $urlImagen ." height='150' width='150'
-               alt='entrante'>
+       <div class='col col-xl-3 rounded-circle'>
+           <img class=' rounded-circle' ". $urlImagen ." height='150' width='150'
+               alt='Plato principal'>
        </div>
        </div> 
        ";
@@ -76,20 +75,20 @@
  echo "</div>";
                   
  
-  // Platos principales
+  // Postres
   echo "<div class='row justify-content-around'>";
-  echo "<h3 class='text-center texto-cabecera'>Entrantes</h3>";
+  echo "<h3 class='text-center texto-cabecera'>Postres</h3>";
 
   foreach ($datosMenu as $value) {
-    if($value["tipoplato"] == "entrante"){
+    if($value["tipoplato"] == "Postre"){
       $urlImagen = "src='../imagesPlatos/".$value["nombreimagen"]. " ' ";
       echo "
       
       <div class='row m-3 align-items-center texto-items'>
       <div class='col col-10 col-md-7 '>".$value["nombre"]."</div>
-      <div class='col col-md-3 rounded-circle'>
-          <img class='img-fluid rounded-circle' ". $urlImagen ." height='150' width='150'
-              alt='entrante'>
+      <div class='col col-xl-3 rounded-circle'>
+          <img class='rounded-circle' ". $urlImagen ." height='150' width='150'
+              alt='Postre'>
       </div>
       </div> 
       ";

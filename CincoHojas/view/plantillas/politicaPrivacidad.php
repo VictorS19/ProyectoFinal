@@ -1,13 +1,5 @@
-<?php 
- session_start();
-if(!isset($_SESSION['datosSesion'])){
-    header('Location: ../../view/plantillas/plantillaLogin.php');
-}
-use app\controller\ReservaController;
-require "../../controller/Controlador/ReservaController.php";
-(new ReservaController)->reservar();
+<?php  session_start();
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +7,7 @@ require "../../controller/Controlador/ReservaController.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva</title>
+    <title>Privacidad</title>
     <link rel="shortcut icon" href="../images/LogoDef.JPG" />
     <link rel="stylesheet" href="../estilos/index.css">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>
@@ -26,7 +18,7 @@ require "../../controller/Controlador/ReservaController.php";
 <body>
     <header class="d-flex justify-content-center align-items-center">
         <img class="img-fluid me-3 logoGeneral" src="../images/LogoDef.JPG" heiht="100" width="100" alt="logo">
-        <h2 class="fw-bold fs-2">Reserva</h2>
+        <h2 class="fw-bold fs-2">Política de Privacidad</h2>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light fs-3">
@@ -40,61 +32,33 @@ require "../../controller/Controlador/ReservaController.php";
                     <a class="nav-link " aria-current="page" href="../../index.php">Inicio</a>
                     <a class="nav-link " href="./plantillaCarta.php">Carta</a>
                     <a class="nav-link " href="./plantillaPlatos.php">Platos</a>
-                    <a class="nav-link active" href="#">Reserva</a>
+                    <a class="nav-link " href="./plantillaReserva.php">Reserva</a>
                     <a class="nav-link" href="./plantillaConocenos.php">Conócenos</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="mainCarta">
-        <div class="container">
-            <h2 class="text-uppercase text-center fw-bold text-light p-2">Reserva una mesa en Cinco Hojas</h2>
-            <hr class="hrCarta">
-        </div>
-        <div class="row justify-content-around ">
+    <main class="fondoVerde p-5">
 
 
-            <div
-                class="row justify-content-around text-light text-center fw-bold fondoVerde rounded m-4 p-4 col col-10">
+        <div class="row justify-content-around bg-light rounded">
 
-                <form class="col col-9 col-md-3 text-center p-3" method="post">
-                    <label for="fechaReserva"  class="form-label">Fecha de la reserva</label>
-                    <input type="date" min="2023-05-29" value="2023-05-29" class="form-control text-center" name="fechaReserva">
+            <div class="col col-lg-8 p-4">
+                
 
-                    <label for="numComensales" class="form-label">Número de comensales</label>
-                    <input type="number" class="form-control text-center" name="numComensales" value="1" max="6"
-                        min="1">
+                <p>La presente Política de Privacidad establece los términos en que CincoHojas usa y protege la información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento. Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.</p>   
 
-                    <input type="submit" class="btn btn-light m-3" name="FechaOk" value="Confirmar Fecha">
-                   
-                </form>
+                <h5 class="text-uppercase  fw-bold  p-4">Información que es recogida</h5>
+                <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre e información de contacto como su dirección de correo electrónico. Así mismo cuando sea necesario podrá ser requerida información específica para procesar alguna reserva.</p>
+                <h5 class="text-uppercase  fw-bold  p-4">Uso de la información recogida</h5>
+                <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener un registro de usuarios, de reservas en caso que aplique, y mejorar nuestros productos y servicios.</p>
 
-                <form class="col col-9 col-md-3 text-center p-3 " method="post">
-                    <label class="form-label">Horas disponibles</label>
-                    <select name="horaReserva" class="form-select form-select-lg text-center">
-
-                        <option value="ko" selected>Elige la hora</option>
-                        <?php 
-                        if(isset($_SESSION["datosReserva"])){
-
-                            foreach ($_SESSION["datosReserva"][1] as $value) {
-                                $valueSelect = " '" .$value."' ";
-                               echo " <option value= ". $valueSelect. ">".$value."</option>";
-
-                            }
-                        }
-                        ?>
-                       
-                    </select>
-
-                    <input type="submit" class="btn btn-light m-3" name="ReservaOk" value="Reservar">
-                    <?php  if(isset($_POST['errorReserva'])){  echo "<p class='alert alert-danger'>".$_SESSION['errorReserva']."</p>";}?>
-                </form>
-
+                
+               
+                
 
             </div>
-
         </div>
     </main>
 

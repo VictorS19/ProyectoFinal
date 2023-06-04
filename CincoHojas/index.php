@@ -1,4 +1,4 @@
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,10 +103,28 @@
                             Otros enlaces
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset text-decoration-none">Política de privacidad</a>
+                            <a href="./view/plantillas/politicaPrivacidad.php" class="text-reset text-decoration-none">Política de privacidad</a>
                         </p>
+
+                        <?php 
+                         if(isset($_SESSION['datosSesion'])){
+                            
+                            echo "
+                            <p>
+                            <a href='./view/plantillas/plantillaLogin.php' class='text-reset text-decoration-none'>".$_SESSION['datosSesion'][2].": Cerrar Sesión</a>
+                            </p>
+                            ";
+                          }else{
+                            echo "
+                            <p>
+                            <a href='./view/plantillas/plantillaLogin.php' class='text-reset text-decoration-none'>Iniciar Sesión</a>
+                            </p>
+                            ";
+                          }
+                      
+                        ?>
                         <p>
-                            <a href="./view/plantillas/plantillaLogin.php" class="text-reset text-decoration-none">Iniciar Sesión</a>
+                            <a href="http://www.freepik.com" class="text-reset text-decoration-none">Licencia de las imágenes</a>
                         </p>
                     
                     </div>
@@ -123,11 +141,6 @@
                         <p><i class="fas fa-phone me-3"></i> 623 34 45 32</p>
                     </div>
                    
-                    <div class="col-md-2 mb-5">
-                        <a class="alert alert-secondary text-decoration-none" href="http://www.freepik.com">Images by
-                            Freepik</a>
-
-                    </div>
                 </div>
             
             </div>

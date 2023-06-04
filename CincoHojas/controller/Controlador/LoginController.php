@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controller;
-
+session_start();
 use app\consultasBd\LoginBd;
 class LoginController {
 
@@ -32,9 +32,9 @@ class LoginController {
           require_once __DIR__.'./../ConsultasBD/LoginBd.php';
           $datosUsr = (new LoginBd)->validar($correo);
 
-          if(!empty($datosUsr) && /*password_verify($pass, $datosUsr['pass'])*/$pass == $datosUsr['pass']){
-            $_SESSION['datosSesion'] = [$datosUsr['correo'],$datosUsr['pass'],$datosUsr['nombre']];
-            header('Location: ../../index.php');//TODO verificar ruta
+          if(!empty($datosUsr) && password_verify($pass, $datosUsr['pass'])){
+            $_SESSION['datosSesion'] = [$datosUsr['correo'],$datosUsr['pass'],$datosUsr['nombre'],$datosUsr['dni'],$datosUsr['esAdmin']];
+            header('Location: ../../index.php');
           }else{
             $_SESSION['errorLog'] = "Usuario o contraseña incorrectos";
           }

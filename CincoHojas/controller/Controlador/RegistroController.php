@@ -1,6 +1,6 @@
 <?php
  namespace app\controller;
-
+ session_start();
  use app\consultasBd\RegistroUsuarioBd;
 
  class RegistroController{
@@ -41,7 +41,7 @@
       
         require_once __DIR__.'\..\ConsultasBD\RegistroUsuarioBd.php';
         $registro = (new RegistroUsuarioBd)->registrarBd(strtoupper($dni),$nombre,$apellidos,$fechaNac,$correo, password_hash($pass,PASSWORD_DEFAULT));
-        $_SESSION['datosSesion'] = [$correo,$pass,$nombre];
+        $_SESSION['datosSesion'] = [$correo,$pass,$nombre,$dni];
         header('Location: ../../index.php');
 
       }

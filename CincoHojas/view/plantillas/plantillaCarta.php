@@ -13,6 +13,7 @@ require "../../controller/Controlador/CartaController.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta</title>
     <link rel="shortcut icon" href="../images/LogoDef.JPG" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="../estilos/index.css">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -113,12 +114,22 @@ require "../../controller/Controlador/CartaController.php";
                     Otros enlaces
                 </h6>
                 <p>
-                    <a href="#!" class="text-reset text-decoration-none">Política de privacidad</a>
+                    <a href="./politicaPrivacidad.php" class="text-reset text-decoration-none">Política de privacidad</a>
                 </p>
+                <?php 
+                    if(isset($_SESSION['datosSesion'])){
+                    
+                    echo "
+                    <p>
+                    <a href='./plantillaLogin.php' class='text-reset text-decoration-none'>".$_SESSION['datosSesion'][2].": Cerrar Sesión</a>
+                    </p>
+                    ";
+                    }
+                
+                ?>
                 <p>
-                    <a href="./plantillaLogin.php" class="text-reset text-decoration-none">Iniciar Sesión</a>
+                    <a href="http://www.freepik.com" class="text-reset text-decoration-none">Licencia de las imágenes</a>
                 </p>
-            
             </div>
             
 
@@ -133,11 +144,7 @@ require "../../controller/Controlador/CartaController.php";
                 <p><i class="fas fa-phone me-3"></i> 623 34 45 32</p>
             </div>
             
-            <div class="col-md-2 mb-5">
-                <a class="alert alert-secondary text-decoration-none" href="http://www.freepik.com">Images by
-                    Freepik</a>
 
-            </div>
         </div>
        
     </div>
