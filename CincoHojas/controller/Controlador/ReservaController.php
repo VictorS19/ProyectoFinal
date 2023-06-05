@@ -10,7 +10,6 @@
 
   public function reservar()
   {
-    var_dump($_POST);
     require_once __DIR__.'\..\ConsultasBD\ReservaBd.php';
     if (isset($_POST['FechaOk'])) {
 

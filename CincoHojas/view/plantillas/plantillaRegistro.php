@@ -24,24 +24,29 @@ require "../../controller/Controlador/RegistroController.php";
 
         <form action="" method="post" class="form formV">
             <h2>!Registrate en Cinco Hojas!</h2>
-
-            <label class="form-label">Nombre: <input type="text" class="form-text" name="nombre" require></label><br>
-            <label class="form-label">Apellidos: <input type="text" class="form-text" name="apellidos" require></label><br>
-            <label class="form-label">DNI: <input type="text" class="form-text" name="dni"  require></label><br>
-            <label class="form-label">Fecha de nacimiento: <input type="date" name="fechaNac"  require></label><br>
-            <label class="form-label">Correo: <input type="email" class="form-text" name="correo" require></label><br>
-            <label class="form-label">Contraseña: <input type="password" class="form-text" name="pass" require></label><br>
-            <label class="form-label">Repetir contraseña: <input type="password" class="form-text" name="pass2"  require></label><br>
-
+            <div class="">
+                <label class="form-label">Nombre: <input type="text" class="form-text" name="nombre"
+                        require></label><br>
+                <label class="form-label">Apellidos: <input type="text" class="form-text" name="apellidos"
+                        require></label><br>
+                <label class="form-label">DNI: <input type="text" class="form-text" name="dni" require></label><br>
+                <label class="form-label">Teléfono: <input type="tel" name="fechaNac" require></label><br>
+                <label class="form-label">Correo: <input type="email" class="form-text" name="correo"
+                        require></label><br>
+                <label class="form-label">Contraseña: <input type="password" class="form-text" name="pass"
+                        require></label><br>
+                <label class="form-label">Repetir contraseña: <input type="password" class="form-text" name="pass2"
+                        require></label><br>
+            </div>
             <input type="submit" value="Registrarse" class="btn btn-primary" name="registroOk">
             <a href="./plantillaLogin.php" class="btn btn-secondary">Ir al Login</a><br>
 
-            
-            <?php if(isset($_SESSION['errorReg'])){
-                echo "<p class='alert alert-danger m-2'>".$_SESSION['errorReg']."</p>";
+
+            <?php if(isset($_POST['errorReg'])){
+                echo "<p class='alert alert-danger m-2'>".$_POST['errorReg']."</p>";
         } ?>
         </form>
-       
+
     </div>
 
 

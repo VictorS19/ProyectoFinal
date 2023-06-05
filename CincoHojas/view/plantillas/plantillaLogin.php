@@ -32,11 +32,11 @@ require "../../controller/Controlador/LoginController.php";
                     require></label><br>
 
             <input type="submit" value="Login" class="btn btn-primary" name="loginOk">
-            <a href="./plantillaRegistro.php" class="btn btn-secondary">!Regístrate!</a><br>
-
+            <a href="./plantillaRegistro.php" class="btn btn-secondary">!Regístrate!</a>
+            <a href="../../index.php" class="btn btn-secondary">Volver</a>
             
-            <?php if(isset($_SESSION['errorLog'])){
-                echo "<p class='alert alert-danger m-2'>".$_SESSION['errorLog']."</p>";
+            <?php if(isset($_POST['errorLog'])){
+                echo "<p class='alert alert-danger m-2'>".$_POST['errorLog']."</p>";
         } ?>
         </form>
         

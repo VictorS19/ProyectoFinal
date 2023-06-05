@@ -25,9 +25,9 @@ class LoginController {
         
   
         if($errorInput){
-          $_SESSION['errorLog'] = "Rellene correctamente todos los campos para continuar";
+          $_POST['errorLog'] = "Rellene correctamente todos los campos para continuar";
         }else{
-          if(isset($_SESSION['errorLog'])){unset($_SESSION['errorLog']);}
+          if(isset($_POST['errorLog'])){unset($_POST['errorLog']);}
           
           require_once __DIR__.'./../ConsultasBD/LoginBd.php';
           $datosUsr = (new LoginBd)->validar($correo);
@@ -36,7 +36,7 @@ class LoginController {
             $_SESSION['datosSesion'] = [$datosUsr['correo'],$datosUsr['pass'],$datosUsr['nombre'],$datosUsr['dni'],$datosUsr['esAdmin']];
             header('Location: ../../index.php');
           }else{
-            $_SESSION['errorLog'] = "Usuario o contraseña incorrectos";
+            $_POST['errorLog'] = "Usuario o contraseña incorrectos";
           }
           
 

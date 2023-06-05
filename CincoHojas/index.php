@@ -126,7 +126,17 @@
                         <p>
                             <a href="http://www.freepik.com" class="text-reset text-decoration-none">Licencia de las imágenes</a>
                         </p>
-                    
+                        <?php 
+                         if(isset($_SESSION['datosSesion']) && $_SESSION['datosSesion'][4] == 1){
+                            
+                            echo "
+                            <p>
+                            <a href='./view/plantillas/plantillaGestion.php' class='text-reset text-decoration-none'>Gestionar Reservas</a>
+                            </p>
+                            ";
+                         
+                         }
+                        ?>
                     </div>
                    
 

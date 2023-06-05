@@ -25,7 +25,7 @@
       $dni = $_POST['dni'];
       if(strlen($dni) < 8 ){ $errorInput = true ;}
       $fechaNac = $_POST['fechaNac'];
-      if(strlen($fechaNac) < 3){ $errorInput = true ;}
+      if(strlen($fechaNac) < 9){ $errorInput = true ;}
       $correo = $_POST['correo'];
       if(strlen($correo) < 3){ $errorInput = true ;}
       $pass = $_POST['pass'];
@@ -34,14 +34,14 @@
       if($pass != $pass2){ $errorInput = true ;}
 
       if($errorInput){
-        $_SESSION['errorReg'] = "Rellene correctamente todos los campos para continuar";
+        $_POST['errorReg'] = "Rellene correctamente todos los campos para continuar";
       }else{
 
-        if(isset($_SESSION['errorReg'])){unset($_SESSION['errorReg']);}
+        if(isset($_POST['errorReg'])){unset($_POST['errorReg']);}
       
         require_once __DIR__.'\..\ConsultasBD\RegistroUsuarioBd.php';
         $registro = (new RegistroUsuarioBd)->registrarBd(strtoupper($dni),$nombre,$apellidos,$fechaNac,$correo, password_hash($pass,PASSWORD_DEFAULT));
-        $_SESSION['datosSesion'] = [$correo,$pass,$nombre,$dni];
+        $_SESSION['datosSesion'] = [$correo,$pass,$nombre,$dni,0];
         header('Location: ../../index.php');
 
       }

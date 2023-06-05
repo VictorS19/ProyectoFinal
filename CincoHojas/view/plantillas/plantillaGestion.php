@@ -1,11 +1,11 @@
 <?php 
  session_start();
-if(!isset($_SESSION['datosSesion'])){
+if(!isset($_SESSION['datosSesion']) && $_SESSION['datosSesion'][4] != 1){
     header('Location: ../../view/plantillas/plantillaLogin.php');
 }
-use app\controller\ReservaController;
-require "../../controller/Controlador/ReservaController.php";
-(new ReservaController)->reservar();
+use app\controller\GestionController;
+require "../../controller/Controlador/GestionController.php";
+(new GestionController)->gestionar();
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ require "../../controller/Controlador/ReservaController.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva</title>
+    <title>Gestión</title>
     <link rel="shortcut icon" href="../images/LogoDef.JPG" />
     <link rel="stylesheet" href="../estilos/index.css">
     <script src="https://kit.fontawesome.com/4344516574.js" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@ require "../../controller/Controlador/ReservaController.php";
 <body>
     <header class="d-flex justify-content-center align-items-center">
         <img class="img-fluid me-3 logoGeneral" src="../images/LogoDef.JPG" heiht="100" width="100" alt="logo">
-        <h2 class="fw-bold fs-2">Reserva</h2>
+        <h2 class="fw-bold fs-2">Gestión de reservas</h2>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light fs-3">
@@ -40,7 +40,7 @@ require "../../controller/Controlador/ReservaController.php";
                     <a class="nav-link " aria-current="page" href="../../index.php">Inicio</a>
                     <a class="nav-link " href="./plantillaCarta.php">Carta</a>
                     <a class="nav-link " href="./plantillaPlatos.php">Platos</a>
-                    <a class="nav-link active" href="#">Reserva</a>
+                    <a class="nav-link " href="./plantillaReserva.php">Reserva</a>
                     <a class="nav-link" href="./plantillaConocenos.php">Conócenos</a>
                 </div>
             </div>
@@ -49,7 +49,7 @@ require "../../controller/Controlador/ReservaController.php";
 
     <main class="mainCarta">
         <div class="container">
-            <h2 class="text-uppercase text-center fw-bold text-light p-2">Reserva una mesa en Cinco Hojas</h2>
+            <h2 class="text-uppercase text-center fw-bold text-light p-2">Gestión de las reservas del restautante</h2>
             <hr class="hrCarta">
         </div>
         <div class="row justify-content-around ">
@@ -58,39 +58,38 @@ require "../../controller/Controlador/ReservaController.php";
             <div
                 class="row justify-content-around text-light text-center fw-bold fondoVerde rounded m-4 p-4 col col-10">
 
-                <form class="col col-9 col-md-3 text-center p-3" method="post">
-                    <label for="fechaReserva"  class="form-label">Fecha de la reserva</label>
-                    <?php $fechaHoy = getdate(); $fechaStr = $fechaHoy['year'].'-'.$fechaHoy['mon'].'-'.$fechaHoy['mday'];?>
-                    <input type="date" min="<?= $fechaStr?>" value="<?= $fechaStr?>" class="form-control text-center" name="fechaReserva">
+                <div class="col col-10 text-center p-3">
+                    
+                <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">idReserva</th>
+                    <th scope="col">Mesa</th>
+                    <th scope="col">Comensales</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Dni Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    if(isset($_SESSION["codGestion"])){
+                    echo $_SESSION["codGestion"];
+                    }
+                    ?>
 
-                    <label for="numComensales" class="form-label">Número de comensales</label>
-                    <input type="number" class="form-control text-center" name="numComensales" value="1" max="6"
-                        min="1">
-
-                    <input type="submit" class="btn btn-light m-3" name="FechaOk" value="Confirmar Fecha">
+                
+                </tbody>
+                </table>
                    
-                </form>
+                </div>
 
-                <form class="col col-9 col-md-3 text-center p-3 " method="post">
-                    <label class="form-label">Horas disponibles</label>
-                    <select name="horaReserva" class="form-select form-select-lg text-center">
+                <form class="col col-5 text-center p-3 " method="post">
+                    <label class="form-label">Eliminar Reserva</label>
+                    <input type="number" name="idReservaGestion" class="form-control text-center" value="1" min="1">
 
-                        <option value="ko" selected>Elige la hora</option>
-                        <?php 
-                        if(isset($_SESSION["datosReserva"])){
-
-                            foreach ($_SESSION["datosReserva"][1] as $value) {
-                                $valueSelect = " '" .$value."' ";
-                               echo " <option value= ". $valueSelect. ">".$value."</option>";
-
-                            }
-                        }
-                        ?>
-                       
-                    </select>
-
-                    <input type="submit" class="btn btn-light m-3" name="ReservaOk" value="Reservar">
-                    <?php  if(isset($_POST['errorReserva'])){  echo "<p class='alert alert-danger'>".$_SESSION['errorReserva']."</p>";}?>
+                    <input type="submit" class="btn btn-light m-3" name="GestionOK" value="Eliminar">
+                    <?php  if(isset($_POST['errorGestion'])){  echo "<p class='alert alert-danger'>".$_SESSION['errorGestion']."</p>";}?>
                 </form>
 
 
