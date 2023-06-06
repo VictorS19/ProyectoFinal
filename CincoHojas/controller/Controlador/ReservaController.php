@@ -11,6 +11,13 @@
   public function reservar()
   {
     require_once __DIR__.'\..\ConsultasBD\ReservaBd.php';
+
+    $ultReserva = (new ReservaBd)->getUltReserva($_SESSION['datosSesion'][3], date('Y-m-d'));
+    if(!empty($ultReserva)){
+      $_SESSION["ultReserva"] = $ultReserva;
+
+    }
+
     if (isset($_POST['FechaOk'])) {
 
         $fecha = $_POST["fechaReserva"]; 

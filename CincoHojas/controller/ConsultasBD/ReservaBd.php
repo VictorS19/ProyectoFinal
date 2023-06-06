@@ -7,11 +7,43 @@ use app\conf\conexionBd;
 
         
 
+    public function getUltReserva(string $dni,string $fHoy):array
+    {
+        
+        $sql3 = 'select * from reservas where dniusuarios = :dni and fecha >= :fhoy';
+
+        require __DIR__.'/../appConf/conexionBd.php';
+        
+        
+        try {
+            //extraer los datos de la ultima reseeva realizada por el usuario
+            $con = (new conexionBd)->getConexion();
+            $stn = $con->prepare($sql3);
+            $stn->bindValue(":dni", $dni);
+            $stn->bindValue(":fhoy", $fHoy);
+            $stn->execute();
+            $reserva = $stn->fetchAll(\PDO::FETCH_ASSOC);
+
+            if(empty($reserva)){
+                return [];
+            }else{
+                return $reserva;
+            }
+            
+            
+        } catch (\PDOException $ex) {
+            throw $ex;
+        } finally {
+            unset($stn);
+            unset($con);
+        }
+    }
+
     public function mostrarHoras(string $fecha):array
     {
        
         $sql = 'select *  from reservas where fecha = :fecha order by hora';
-        require __DIR__.'/../appConf/conexionBd.php';
+        
         
         
         try {
@@ -43,7 +75,7 @@ use app\conf\conexionBd;
     {
        
         $sql1 = 'insert into reservas (dniusuarios, idmesas, comensales, fecha, hora) values (:dni,:mesa,:comensales,:fecha,:hora)';
-        require __DIR__.'/../appConf/conexionBd.php';
+        
         
         
         try {
@@ -67,4 +99,9 @@ use app\conf\conexionBd;
        
         
     }
+
+   
+       
+
+   
 }

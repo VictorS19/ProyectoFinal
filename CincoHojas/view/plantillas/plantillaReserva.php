@@ -60,8 +60,7 @@ require "../../controller/Controlador/ReservaController.php";
 
                 <form class="col col-9 col-md-3 text-center p-3" method="post">
                     <label for="fechaReserva"  class="form-label">Fecha de la reserva</label>
-                    <?php $fechaHoy = getdate(); $fechaStr = $fechaHoy['year'].'-'.$fechaHoy['mon'].'-'.$fechaHoy['mday'];?>
-                    <input type="date" min="<?= $fechaStr?>" value="<?= $fechaStr?>" class="form-control text-center" name="fechaReserva">
+                    <input type="date" min="<?=date('Y-m-d')?>" value="<?=date('Y-m-d')?>" class="form-control text-center" name="fechaReserva">
 
                     <label for="numComensales" class="form-label">Número de comensales</label>
                     <input type="number" class="form-control text-center" name="numComensales" value="1" max="6"
@@ -92,8 +91,36 @@ require "../../controller/Controlador/ReservaController.php";
                     <input type="submit" class="btn btn-light m-3" name="ReservaOk" value="Reservar">
                     <?php  if(isset($_POST['errorReserva'])){  echo "<p class='alert alert-danger'>".$_SESSION['errorReserva']."</p>";}?>
                 </form>
+                 <div class="col col-10"> 
+                    <h4 class="text-center">Proximas reservas del usuario</h4>    
+                    <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Comensales</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        if(isset($_SESSION["ultReserva"])){
+                            
+                            foreach ($_SESSION["ultReserva"] as $value) {
+                                echo "
+                                <tr>
+                                <th>".$value["fecha"]."</th>
+                                <td>".$value["hora"]."</td>
+                                <td>".$value["comensales"]."</td>
+                                </tr>
+                                ";
+                            }
+                        }
+                        ?>
 
-
+                    
+                    </tbody>
+                    </table>
+                </div>   
             </div>
 
         </div>
